@@ -18,7 +18,7 @@
             "keepnr": 5,
             "inputs": {
                 "reflex-course": { "type": "git", "value": "https://github.com/qfpl/reflex-course", "emailresponsible": false },
-                "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs.git release-18.03", "emailresponsible": false }
+                "nixpkgs": { "type": "git", "value": "https://github.com/NixOS/nixpkgs.git release-18.09", "emailresponsible": false }
             }
         }
     }
