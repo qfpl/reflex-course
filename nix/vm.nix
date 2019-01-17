@@ -7,9 +7,9 @@ let
       virtualbox = {
         baseImageSize = 15 * 1024;
         memorySize = 3 * 1024;
-        vmName = "Reflex workshop (NixOS)";
-        vmDerivationName = "nixos-ova-reflex-workshop";
-        vmFileName = "reflex-workshop.ova";
+        vmName = "Reflex course (NixOS)";
+        vmDerivationName = "nixos-ova-reflex-course";
+        vmFileName = "reflex-course.ova";
       };
 
       services.xserver = {
