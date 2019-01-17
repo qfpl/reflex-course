@@ -35,8 +35,7 @@ let
     
   };
 
-  hydraJob = (import "${nixpkgs.path}/lib").hydraJob;
-  course-vm = hydraJob ((import "${nixpkgs.path}/nixos/lib/eval-config.nix" {
+  course-vm = nixpkgs.lib.hydraJob ((import "${nixpkgs.path}/nixos/lib/eval-config.nix" {
     modules = [course-vm-config];
   }).config.system.build.virtualBoxOVA);
 in
