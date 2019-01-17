@@ -1,7 +1,8 @@
-{nixpkgs ? import <nixpkgs> {} }:
+{nixpkgs ? <nixpkgs> }:
 let
+  pkgs = import nixpkgs {};
   course-vm-config = {
-    imports = [ "${nixpkgs.path}/nixos/modules/virtualisation/virtualbox-image.nix" ];
+    imports = [ "${nixpkgs}/nixos/modules/virtualisation/virtualbox-image.nix" ];
  
       virtualbox = {
         baseImageSize = 15 * 1024;
@@ -34,8 +35,9 @@ let
       };
     
   };
-
-  course-vm = nixpkgs.lib.hydraJob ((import "${nixpkgs.path}/nixos/lib/eval-config.nix" {
+ 
+  hydraJob = (import "${nixpkgs}/lib/").hydraJob;
+  course-vm = hydraJob ((import "${nixpkgs}/nixos/lib/eval-config.nix" {
     modules = [course-vm-config];
   }).config.system.build.virtualBoxOVA);
 in
